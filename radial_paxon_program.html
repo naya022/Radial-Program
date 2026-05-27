@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radial → Paxon Workforce Readiness Program | Naya Roquemore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --radial-navy: #1B2B4B;
+  --radial-blue: #0057A8;
+  --radial-light-blue: #3A8DDE;
+  --radial-orange: #F5811F;
+  --radial-orange-light: #FFF0E0;
+  --radial-dark: #0D1B33;
+  --radial-gray: #F4F6F9;
+  --radial-mid-gray: #8A96A8;
+  --radial-border: #E0E5EE;
+  --white: #FFFFFF;
+  --text-primary: #0D1B33;
+  --text-secondary: #4A5568;
+  --text-muted: #8A96A8;
+  --success: #0F7A4B;
+  --success-bg: #E6F4EE;
+  --font-display: 'DM Serif Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --shadow-sm: 0 1px 4px rgba(13,27,51,0.08);
+  --shadow-md: 0 4px 16px rgba(13,27,51,0.12);
+  --shadow-lg: 0 12px 40px rgba(13,27,51,0.16);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── NAV ─────────────────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--radial-navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 60px;
+  border-bottom: 2px solid var(--radial-orange);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-mark {
+  width: 32px;
+  height: 32px;
+}
+
+.nav-brand {
+  font-family: var(--font-display);
+  color: var(--white);
+  font-size: 18px;
+  letter-spacing: -0.3px;
+}
+
+.nav-brand span { color: var(--radial-orange); }
+
+.nav-links {
+  display: flex;
+  gap: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 8px 14px;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: color .2s, background .2s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+.nav-links a.active { color: var(--radial-orange); }
+
+.nav-presenter {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+}
+
+/* ── HERO ─────────────────────────────────────────────────────── */
+.hero {
+  background: var(--radial-navy);
+  padding: 0;
+  min-height: 480px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-left {
+  padding: 4rem 2.5rem 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245,129,31,0.15);
+  border: 1px solid rgba(245,129,31,0.3);
+  color: var(--radial-orange);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 99px;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  color: var(--white);
+  font-size: clamp(28px, 3.5vw, 44px);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--radial-orange);
+}
+
+.hero-sub {
+  color: rgba(255,255,255,0.65);
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 420px;
+  margin-bottom: 2rem;
+}
+
+.hero-presenter-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  width: fit-content;
+}
+
+.presenter-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--radial-orange) 0%, #E06010 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--white);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.presenter-info p { font-size: 13px; color: var(--white); font-weight: 500; }
+.presenter-info span { font-size: 11px; color: rgba(255,255,255,0.5); }
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-visual {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0D2347 0%, #1B2B4B 40%, #0057A8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.hero-stat {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  text-align: center;
+}
+
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: var(--radial-orange);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+
+.hero-geo {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid rgba(245,129,31,0.2);
+  opacity: 0.4;
+}
+
+.hero-geo2 {
+  position: absolute;
+  bottom: -60px;
+  left: -30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 2px solid rgba(58,141,222,0.25);
+  opacity: 0.4;
+}
+
+/* ── SECTIONS ─────────────────────────────────────────────────── */
+.section { padding: 5rem 3rem; }
+.section-alt { background: var(--radial-gray); }
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--radial-orange);
+  margin-bottom: .75rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 36px);
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.section-title em { font-style: italic; color: var(--radial-blue); }
+
+.section-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+/* ── CHALLENGE CARDS ───────────────────────────────────────────── */
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 2rem;
+}
+
+.challenge-card {
+  background: var(--white);
+  border: 1px solid var(--radial-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.challenge-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+.challenge-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+
+.challenge-card.red::before { background: #E24B4B; }
+.challenge-card.amber::before { background: var(--radial-orange); }
+.challenge-card.blue::before { background: var(--radial-blue); }
+
+.challenge-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.challenge-icon.red { background: #FCEBEB; }
+.challenge-icon.amber { background: var(--radial-orange-light); }
+.challenge-icon.blue { background: #E6F0FA; }
+
+.challenge-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.challenge-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+.challenge-tag {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 99px;
+}
+
+.challenge-tag.red { background: #FCEBEB; color: #A32D2D; }
+.challenge-tag.amber { background: var(--radial-orange-light); color: #8A4A00; }
+.challenge-tag.blue { background: #E6F0FA; color: #0C447C; }
+
+/* ── PROGRAM TIMELINE ─────────────────────────────────────────── */
+.timeline-wrap {
+  position: relative;
+  padding-top: 2rem;
+}
+
+.timeline-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 3rem;
+  background: var(--radial-border);
+  border-radius: 99px;
+  height: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--radial-blue) 0%, var(--radial-orange) 100%);
+  width: 0%;
+  transition: width 1.2s ease;
+}
+
+.phases-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.phase-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 99px;
+  border: 1.5px solid var(--radial-border);
+  cursor: pointer;
+  transition: all .2s;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--white);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.phase-pill:hover { border-color: var(--radial-blue); color: var(--radial-blue); }
+.phase-pill.active { background: var(--radial-blue); border-color: var(--radial-blue); color: var(--white); }
+
+.phase-pill-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.phase-pill.active .phase-pill-num { background: rgba(255,255,255,0.25); }
+
+.phase-detail {
+  display: none;
+  animation: fadeUp .3s ease;
+}
+
+.phase-detail.visible { display: block; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.phase-detail-inner {
+  background: var(--white);
+  border: 1px solid var(--radial-border);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.phase-header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--radial-border);
+}
+
+.phase-number-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.phase-number-badge.p1 { background: #E6F0FA; color: var(--radial-blue); }
+.phase-number-badge.p2 { background: #E6F4EE; color: #0F7A4B; }
+.phase-number-badge.p3 { background: var(--radial-orange-light); color: #8A4A00; }
+.phase-number-badge.p4 { background: #EEEDFE; color: #3C3489; }
+
+.phase-header-text h3 { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+.phase-header-text p { font-size: 13px; color: var(--text-muted); }
+
+.phase-timing-badge {
+  margin-left: auto;
+  background: var(--radial-gray);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.module-card {
+  background: var(--radial-gray);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  border: 1px solid transparent;
+  transition: border-color .2s;
+}
+
+.module-card:hover { border-color: var(--radial-blue); }
+
+.module-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.module-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.module-card h4 { font-size: 13px; font-weight: 600; }
+.module-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.55; }
+
+.phase-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
+
+.ptag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 99px;
+  letter-spacing: .03em;
+}
+
+.ptag-jd { background: #E6F0FA; color: #0C447C; }
+.ptag-challenge { background: #FCEBEB; color: #A32D2D; }
+.ptag-outcome { background: #E6F4EE; color: #0F7A4B; }
+
+.phase-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.kpi-card {
+  background: var(--radial-gray);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  text-align: center;
+  border: 1px solid var(--radial-border);
+}
+
+.kpi-num {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--radial-blue);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.kpi-label { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+.tools-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--radial-border);
+}
+
+.tool-pill {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  border: 1px solid var(--radial-border);
+  color: var(--text-secondary);
+  background: var(--white);
+  font-weight: 500;
+}
+
+/* ── METRICS ───────────────────────────────────────────────────── */
+.metrics-section {
+  background: var(--radial-navy);
+  padding: 5rem 3rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.metric-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  text-align: center;
+  transition: background .2s;
+}
+
+.metric-card:hover { background: rgba(255,255,255,0.1); }
+
+.metric-num {
+  font-family: var(--font-display);
+  font-size: 44px;
+  color: var(--radial-orange);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.metric-label { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.4; }
+.metric-sub { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+
+/* ── IMPLEMENTATION ROADMAP ───────────────────────────────────── */
+.roadmap-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.roadmap-timeline::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 24px;
+  bottom: 24px;
+  width: 2px;
+  background: var(--radial-border);
+}
+
+.roadmap-item {
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.roadmap-dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  border: 3px solid var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.roadmap-dot.d1 { background: var(--radial-blue); color: var(--white); }
+.roadmap-dot.d2 { background: #0F7A4B; color: var(--white); }
+.roadmap-dot.d3 { background: var(--radial-orange); color: var(--white); }
+.roadmap-dot.d4 { background: #534AB7; color: var(--white); }
+
+.roadmap-content {
+  background: var(--white);
+  border: 1px solid var(--radial-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  flex: 1;
+}
+
+.roadmap-week {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--radial-orange);
+  margin-bottom: 4px;
+}
+
+.roadmap-content h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.roadmap-content p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+.deliverable-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.deliverable {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--radial-gray);
+  padding: 3px 8px;
+  border-radius: 99px;
+}
+
+.deliverable::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  flex-shrink: 0;
+}
+
+/* ── SKILLS ALIGNMENT ─────────────────────────────────────────── */
+.alignment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.alignment-col h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: .75rem;
+  border-bottom: 2px solid var(--radial-border);
+}
+
+.alignment-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--radial-border);
+}
+
+.alignment-row:last-child { border-bottom: none; }
+
+.check-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--success-bg);
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.alignment-text strong { font-size: 13px; font-weight: 600; display: block; margin-bottom: 2px; }
+.alignment-text span { font-size: 12px; color: var(--text-muted); }
+
+/* ── ABOUT PRESENTER ─────────────────────────────────────────── */
+.presenter-section {
+  background: var(--radial-navy);
+  padding: 5rem 3rem;
+}
+
+.presenter-inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.presenter-avatar-lg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--radial-orange) 0%, #C96010 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 34px;
+  color: var(--white);
+  border: 4px solid rgba(255,255,255,0.15);
+  flex-shrink: 0;
+}
+
+.presenter-text h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.presenter-text .role {
+  font-size: 14px;
+  color: var(--radial-orange);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.presenter-text p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 580px;
+  margin-bottom: 1.5rem;
+}
+
+.creds-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.cred {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  padding: 12px;
+}
+
+.cred-label { font-size: 10px; text-transform: uppercase; letter-spacing: .06em; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+.cred-val { font-size: 13px; font-weight: 500; color: var(--white); }
+
+/* ── CTA FOOTER ───────────────────────────────────────────────── */
+.cta-section {
+  background: var(--radial-orange);
+  padding: 4rem 3rem;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: var(--white);
+  margin-bottom: .75rem;
+}
+
+.cta-section p {
+  color: rgba(255,255,255,0.85);
+  font-size: 15px;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: var(--font-body);
+}
+
+.btn-white { background: var(--white); color: var(--radial-orange); }
+.btn-white:hover { background: rgba(255,255,255,0.9); }
+.btn-outline { background: transparent; border-color: rgba(255,255,255,0.6); color: var(--white); }
+.btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+
+/* ── FOOTER ───────────────────────────────────────────────────── */
+footer {
+  background: var(--radial-dark);
+  padding: 2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+footer p { font-size: 12px; color: rgba(255,255,255,0.35); }
+.footer-logo { display: flex; align-items: center; gap: 8px; }
+.footer-logo span { font-family: var(--font-display); color: rgba(255,255,255,0.6); font-size: 15px; }
+
+/* ── PROGRESS INDICATOR ───────────────────────────────────────── */
+.progress-indicator {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  z-index: 99;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--radial-orange);
+  width: 0%;
+  transition: width .1s;
+}
+
+/* ── SCROLL ANIMATIONS ────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .challenges-grid { grid-template-columns: 1fr; }
+  .phases-row { grid-template-columns: 1fr 1fr; }
+  .modules-grid { grid-template-columns: 1fr; }
+  .metrics-grid { grid-template-columns: 1fr 1fr; }
+  .alignment-grid { grid-template-columns: 1fr; }
+  .presenter-inner { grid-template-columns: 1fr; text-align: center; }
+  .presenter-avatar-lg { margin: 0 auto; }
+  .creds-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-indicator"><div class="progress-bar" id="progress"></div></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <svg class="nav-logo-mark" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="14" fill="#0057A8" opacity=".15"/>
+      <path d="M10 8h8a4 4 0 0 1 4 4v0a4 4 0 0 1-4 4h-4l6 8H16l-6-8v8h-4V8h4z" fill="#FFFFFF"/>
+    </svg>
+    <span class="nav-brand">Radial <span>→ Paxon</span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#challenges">Challenges</a></li>
+    <li><a href="#program">The Program</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#outcomes">Outcomes</a></li>
+    <li><a href="#alignment">Skills Fit</a></li>
+    <li><a href="#presenter">About</a></li>
+  </ul>
+  <span class="nav-presenter">Presented by Naya Roquemore &nbsp;·&nbsp; L&D Manager Candidate</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#F5811F"/></svg>
+      L&D Manager Candidate Presentation
+    </div>
+    <h1 class="hero-title">
+      Radial → Paxon<br>
+      <em>Workforce Readiness</em><br>
+      Program
+    </h1>
+    <p class="hero-sub">
+      A 90-day blended learning framework built specifically for Radial's three highest-priority challenges: rebrand transition, inadequate training infrastructure, and rapid workforce scaling.
+    </p>
+    <div class="hero-presenter-card">
+      <div class="presenter-avatar">NR</div>
+      <div class="presenter-info">
+        <p>Naya Roquemore, CDLP</p>
+        <span>Candidate — Learning & Development Manager</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-geo"></div>
+      <div class="hero-geo2"></div>
+      <div class="hero-stats-grid">
+        <div class="hero-stat">
+          <div class="hero-stat-num">90</div>
+          <div class="hero-stat-label">Day implementation plan</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">4</div>
+          <div class="hero-stat-label">Phased program modules</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">7K+</div>
+          <div class="hero-stat-label">Seasonal employees reached</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">15%</div>
+          <div class="hero-stat-label">Target productivity gain</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHALLENGES -->
+<section class="section section-alt" id="challenges">
+  <div class="reveal">
+    <p class="section-label">The Context</p>
+    <h2 class="section-title">What Radial is <em>facing right now</em></h2>
+    <p class="section-desc">This program was designed around Radial's documented, live challenges — not a generic L&D template. Every phase maps directly to a real organizational problem.</p>
+  </div>
+  <div class="challenges-grid reveal">
+    <div class="challenge-card red">
+      <div class="challenge-icon red">⚠</div>
+      <div class="challenge-title">Inadequate training — documented by employees</div>
+      <div class="challenge-desc">Indeed reviews cite training cut from 3 weeks to 7 days, leaving employees unprepared for complex roles in fulfillment and fraud prevention.</div>
+      <span class="challenge-tag red">Critical — Immediate</span>
+    </div>
+    <div class="challenge-card amber">
+      <div class="challenge-icon amber">🔄</div>
+      <div class="challenge-title">Rebrand to Paxon creating workforce uncertainty</div>
+      <div class="challenge-desc">Radial is actively transitioning to Paxon in 2026 while integrating with European sister companies. Employees report unclear company direction.</div>
+      <span class="challenge-tag amber">Active — Ongoing</span>
+    </div>
+    <div class="challenge-card blue">
+      <div class="challenge-icon blue">📦</div>
+      <div class="challenge-title">7,000+ seasonal hires require rapid onboarding</div>
+      <div class="challenge-desc">Annual peak season demands massive, fast onboarding with compliance tracking — with an average employee tenure of just 3.5 years.</div>
+      <span class="challenge-tag blue">Cyclical — Q3/Q4</span>
+    </div>
+    <div class="challenge-card red">
+      <div class="challenge-icon red">📋</div>
+      <div class="challenge-title">34 WARN Act filings — 6,100+ workers affected</div>
+      <div class="challenge-desc">Significant layoffs across 8 states require strategic reskilling programs to redeploy institutional talent rather than lose it entirely.</div>
+      <span class="challenge-tag red">Workforce Risk</span>
+    </div>
+    <div class="challenge-card amber">
+      <div class="challenge-icon amber">🤖</div>
+      <div class="challenge-title">AI & automation adoption gap</div>
+      <div class="challenge-desc">Radial's own research shows only 6% of consumers have used AI commerce — internally, employees need training to work alongside new automation tools.</div>
+      <span class="challenge-tag amber">Strategic — 2026</span>
+    </div>
+    <div class="challenge-card blue">
+      <div class="challenge-icon blue">🏆</div>
+      <div class="challenge-title">New CEO + diversified growth strategy</div>
+      <div class="challenge-desc">Tom Schmitt joined March 2025 to drive customer base diversification. Commercial teams need upskilling on new verticals and the Fast Track product.</div>
+      <span class="challenge-tag blue">Growth Enabler</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section class="section" id="program">
+  <div class="reveal">
+    <p class="section-label">The Solution</p>
+    <h2 class="section-title">The <em>90-Day Program</em></h2>
+    <p class="section-desc">Click each phase to explore the full module breakdown, aligned deliverables, tools used, and measurable KPIs.</p>
+  </div>
+
+  <div class="timeline-wrap reveal">
+    <div class="timeline-bar"><div class="timeline-bar-fill" id="tlbar"></div></div>
+    <div class="phases-row">
+      <div class="phase-pill active" onclick="showPhase(1, this)" id="pill1">
+        <div class="phase-pill-num">1</div>
+        Assess & Audit
+      </div>
+      <div class="phase-pill" onclick="showPhase(2, this)" id="pill2">
+        <div class="phase-pill-num">2</div>
+        Build & Design
+      </div>
+      <div class="phase-pill" onclick="showPhase(3, this)" id="pill3">
+        <div class="phase-pill-num">3</div>
+        Lead & Develop
+      </div>
+      <div class="phase-pill" onclick="showPhase(4, this)" id="pill4">
+        <div class="phase-pill-num">4</div>
+        Measure & Improve
+      </div>
+    </div>
+
+    <!-- Phase 1 -->
+    <div class="phase-detail visible" id="phase1">
+      <div class="phase-detail-inner">
+        <div class="phase-header-row">
+          <div class="phase-number-badge p1">1</div>
+          <div class="phase-header-text">
+            <h3>Needs Assessment & LMS Audit</h3>
+            <p>Discovery — the foundation everything is built on. No assumptions, only data.</p>
+          </div>
+          <div class="phase-timing-badge">Days 1 – 14 &nbsp;·&nbsp; Weeks 1–2</div>
+        </div>
+        <div class="modules-grid">
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">🔍</div>
+              <h4>Skill gap assessment</h4>
+            </div>
+            <p>Structured surveys and manager interviews across all fulfillment center roles and corporate functions. Identifies top 5 skill gaps per role family to prioritize program investment.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">💻</div>
+              <h4>LMS platform audit</h4>
+            </div>
+            <p>Full evaluation of Workday and Rippling LMS setup — completion rates, reporting accuracy, user experience, content gaps, and compliance tracking integrity.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">🗺</div>
+              <h4>Paxon transition impact map</h4>
+            </div>
+            <p>Maps which roles are most affected by the rebrand. Identifies exactly what employees need to know, feel, and do differently — so training is targeted, not generic.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">📋</div>
+              <h4>Compliance training inventory</h4>
+            </div>
+            <p>Audits all existing compliance content — delinquency rates, outdated modules, and tracking gaps. Completed before Q4 hiring surge to protect audit readiness.</p>
+          </div>
+        </div>
+        <div class="phase-tags">
+          <span class="ptag ptag-jd">Needs assessment</span>
+          <span class="ptag ptag-jd">LMS administration</span>
+          <span class="ptag ptag-jd">Data & analytics</span>
+          <span class="ptag ptag-challenge">Inadequate training</span>
+          <span class="ptag ptag-challenge">Rebrand confusion</span>
+          <span class="ptag ptag-outcome">Data-backed program design</span>
+          <span class="ptag ptag-outcome">Leadership readout delivered</span>
+        </div>
+        <div class="phase-kpis">
+          <div class="kpi-card"><div class="kpi-num">5+</div><div class="kpi-label">Role gap profiles built per function</div></div>
+          <div class="kpi-card"><div class="kpi-num">100%</div><div class="kpi-label">LMS content inventoried & audited</div></div>
+          <div class="kpi-card"><div class="kpi-num">Day 14</div><div class="kpi-label">Leadership readout & recommendations</div></div>
+        </div>
+        <div class="tools-strip">
+          <span class="tool-pill">Workday LMS</span>
+          <span class="tool-pill">Rippling</span>
+          <span class="tool-pill">Survey tools</span>
+          <span class="tool-pill">MS Teams interviews</span>
+          <span class="tool-pill">ADDIE framework</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="phase-detail" id="phase2">
+      <div class="phase-detail-inner">
+        <div class="phase-header-row">
+          <div class="phase-number-badge p2">2</div>
+          <div class="phase-header-text">
+            <h3>Paxon Transition & Onboarding Curriculum</h3>
+            <p>Build — translating assessment findings into targeted, ready-to-deploy learning content.</p>
+          </div>
+          <div class="phase-timing-badge">Days 15 – 35 &nbsp;·&nbsp; Weeks 3–5</div>
+        </div>
+        <div class="modules-grid">
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">⚡</div>
+              <h4>Paxon brand microlearning series</h4>
+            </div>
+            <p>5 x 5-minute modules: who we're becoming, what changes, what stays the same, client impact, and an interactive employee Q&A. Deployed via LMS with completion tracking.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">🚀</div>
+              <h4>Structured onboarding track (7/30/60 days)</h4>
+            </div>
+            <p>Role-based onboarding paths with defined milestones to replace the inadequate training cited in employee reviews. Built in Articulate 360 with ADDIE methodology.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">📦</div>
+              <h4>Seasonal workforce rapid-onboard kit</h4>
+            </div>
+            <p>4-hour self-paced onboarding package for 7,000+ seasonal hires — covers compliance, safety, and role basics. Designed to deploy across all fulfillment centers in under a week.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">🎯</div>
+              <h4>Manager communication toolkit</h4>
+            </div>
+            <p>Job aids, talking points, and a VILT session equipping frontline managers to deliver consistent Paxon rebrand messaging to their teams with confidence.</p>
+          </div>
+        </div>
+        <div class="phase-tags">
+          <span class="ptag ptag-jd">Blended learning</span>
+          <span class="ptag ptag-jd">Content development</span>
+          <span class="ptag ptag-jd">Microlearning</span>
+          <span class="ptag ptag-jd">VILT</span>
+          <span class="ptag ptag-jd">Instructional design</span>
+          <span class="ptag ptag-challenge">Seasonal workforce scaling</span>
+          <span class="ptag ptag-challenge">Rebrand transition</span>
+          <span class="ptag ptag-outcome">Faster time-to-productivity</span>
+        </div>
+        <div class="phase-kpis">
+          <div class="kpi-card"><div class="kpi-num">5</div><div class="kpi-label">Microlearning modules built & deployed</div></div>
+          <div class="kpi-card"><div class="kpi-num">&lt;7 days</div><div class="kpi-label">Seasonal onboarding deployment speed</div></div>
+          <div class="kpi-card"><div class="kpi-num">3</div><div class="kpi-label">Role-based onboarding tracks launched</div></div>
+        </div>
+        <div class="tools-strip">
+          <span class="tool-pill">Articulate 360</span>
+          <span class="tool-pill">Adobe Captivate</span>
+          <span class="tool-pill">Workday LMS</span>
+          <span class="tool-pill">MS Teams (VILT)</span>
+          <span class="tool-pill">Job aids (PDF)</span>
+          <span class="tool-pill">ADDIE</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="phase-detail" id="phase3">
+      <div class="phase-detail-inner">
+        <div class="phase-header-row">
+          <div class="phase-number-badge p3">3</div>
+          <div class="phase-header-text">
+            <h3>Leadership Development & Performance Management</h3>
+            <p>Deploy — building manager capability and launching the performance cycle that connects learning to business outcomes.</p>
+          </div>
+          <div class="phase-timing-badge">Days 36 – 70 &nbsp;·&nbsp; Weeks 6–10</div>
+        </div>
+        <div class="modules-grid">
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">👥</div>
+              <h4>Frontline manager VILT series</h4>
+            </div>
+            <p>3 x 90-minute virtual sessions: managing through change, performance conversations, and coaching for productivity. Sessions aligned to Paxon values and new commercial strategy.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">📊</div>
+              <h4>Performance management cycle launch</h4>
+            </div>
+            <p>Deploy goal-setting templates, quarterly check-in guides, and a manager toolkit — fully integrated with LMS learning plans so performance gaps feed directly into upskilling assignments.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">🔁</div>
+              <h4>Reskilling pathways</h4>
+            </div>
+            <p>For roles impacted by automation and facility consolidations — curated learning paths that move warehouse staff into adjacent skilled roles, preserving institutional knowledge.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">🤖</div>
+              <h4>AI & automation literacy module</h4>
+            </div>
+            <p>30-minute eLearning demystifying how Radial uses AI in fulfillment, payments, and fraud detection — reduces automation resistance and builds digital confidence across all levels.</p>
+          </div>
+        </div>
+        <div class="phase-tags">
+          <span class="ptag ptag-jd">Leadership development</span>
+          <span class="ptag ptag-jd">Performance management</span>
+          <span class="ptag ptag-jd">Goal setting & check-ins</span>
+          <span class="ptag ptag-jd">Reskilling</span>
+          <span class="ptag ptag-challenge">Layoffs & workforce reduction</span>
+          <span class="ptag ptag-challenge">AI adoption gap</span>
+          <span class="ptag ptag-outcome">Manager effectiveness lift</span>
+          <span class="ptag ptag-outcome">Reduced attrition risk</span>
+        </div>
+        <div class="phase-kpis">
+          <div class="kpi-card"><div class="kpi-num">3</div><div class="kpi-label">VILT manager cohorts launched</div></div>
+          <div class="kpi-card"><div class="kpi-num">100%</div><div class="kpi-label">Managers with goal-setting templates</div></div>
+          <div class="kpi-card"><div class="kpi-num">Q3</div><div class="kpi-label">Quarterly check-in cycle goes live</div></div>
+        </div>
+        <div class="tools-strip">
+          <span class="tool-pill">Articulate 360</span>
+          <span class="tool-pill">MS Teams (VILT)</span>
+          <span class="tool-pill">Workday LMS</span>
+          <span class="tool-pill">Performance templates</span>
+          <span class="tool-pill">ADDIE + Kirkpatrick</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 4 -->
+    <div class="phase-detail" id="phase4">
+      <div class="phase-detail-inner">
+        <div class="phase-header-row">
+          <div class="phase-number-badge p4">4</div>
+          <div class="phase-header-text">
+            <h3>Measure, Report & Continuously Improve</h3>
+            <p>Evaluate — proving ROI to leadership and building the infrastructure for ongoing program excellence.</p>
+          </div>
+          <div class="phase-timing-badge">Days 71 – 90 &nbsp;·&nbsp; Weeks 11–13</div>
+        </div>
+        <div class="modules-grid">
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">📈</div>
+              <h4>LMS reporting dashboard</h4>
+            </div>
+            <p>Live view of completion rates, compliance tracking, and time-to-productivity metrics segmented by role, location, and hire type. Optimized in Workday for leadership self-serve.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">✅</div>
+              <h4>Kirkpatrick Level 1–3 evaluation</h4>
+            </div>
+            <p>Learner reaction surveys (L1), knowledge checks post-training (L2), and behavior observation at 30 and 60 days (L3). Results compiled into a leadership-ready impact report.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">📑</div>
+              <h4>90-day leadership readout</h4>
+            </div>
+            <p>Impact summary framed around business outcomes — what was built, what moved in the metrics, what's prioritized next. Delivered as an executive deck to HR and business leaders.</p>
+          </div>
+          <div class="module-card">
+            <div class="module-card-header">
+              <div class="module-icon">🎄</div>
+              <h4>Q4 peak season readiness plan</h4>
+            </div>
+            <p>Updated seasonal onboarding kit incorporating 90-day learnings and new Paxon branding. Ready to deploy for the next hiring surge — smarter, faster, and fully compliant.</p>
+          </div>
+        </div>
+        <div class="phase-tags">
+          <span class="ptag ptag-jd">Data & analytics</span>
+          <span class="ptag ptag-jd">Program evaluation</span>
+          <span class="ptag ptag-jd">Continuous improvement</span>
+          <span class="ptag ptag-jd">Compliance tracking</span>
+          <span class="ptag ptag-challenge">Training delinquency</span>
+          <span class="ptag ptag-outcome">ROI demonstrated to leadership</span>
+          <span class="ptag ptag-outcome">Q4 readiness secured</span>
+        </div>
+        <div class="phase-kpis">
+          <div class="kpi-card"><div class="kpi-num">90%+</div><div class="kpi-label">Compliance completion rate target</div></div>
+          <div class="kpi-card"><div class="kpi-num">15%</div><div class="kpi-label">Time-to-productivity reduction goal</div></div>
+          <div class="kpi-card"><div class="kpi-num">Monthly</div><div class="kpi-label">Leadership data reporting cadence</div></div>
+        </div>
+        <div class="tools-strip">
+          <span class="tool-pill">Workday LMS analytics</span>
+          <span class="tool-pill">Kirkpatrick model</span>
+          <span class="tool-pill">PowerPoint / executive deck</span>
+          <span class="tool-pill">MS Teams</span>
+          <span class="tool-pill">Survey tools</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics-section" id="outcomes">
+  <div class="reveal" style="margin-bottom: 2.5rem;">
+    <p class="section-label" style="color: var(--radial-orange);">Projected Outcomes</p>
+    <h2 class="section-title" style="color: var(--white);">What success <em style="color: var(--radial-orange);">looks like</em> at 90 days</h2>
+  </div>
+  <div class="metrics-grid reveal">
+    <div class="metric-card">
+      <div class="metric-num">15%</div>
+      <div class="metric-label">Reduction in time-to-productivity for new hires</div>
+      <div class="metric-sub">Based on structured onboarding vs. current unstructured approach</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">90%+</div>
+      <div class="metric-label">Compliance training completion rate across all locations</div>
+      <div class="metric-sub">Up from undocumented baseline with real-time LMS tracking</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">7K+</div>
+      <div class="metric-label">Seasonal employees onboarded faster and more consistently</div>
+      <div class="metric-sub">Via self-paced digital kit deployable in under one week</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">100%</div>
+      <div class="metric-label">Managers equipped with performance cycle tools and templates</div>
+      <div class="metric-sub">Goal setting, check-ins, and reviews integrated with L&D plans</div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="section section-alt" id="roadmap">
+  <div class="reveal">
+    <p class="section-label">Implementation</p>
+    <h2 class="section-title">90-Day <em>Roadmap</em></h2>
+    <p class="section-desc">A sequenced, milestone-driven plan built to show results within the first two weeks and sustained momentum through the full quarter.</p>
+  </div>
+  <div class="roadmap-timeline reveal">
+    <div class="roadmap-item">
+      <div class="roadmap-dot d1">1</div>
+      <div class="roadmap-content">
+        <div class="roadmap-week">Weeks 1 – 2 &nbsp;·&nbsp; Days 1–14</div>
+        <h3>Discovery: Assess, listen, and map the gaps</h3>
+        <p>Schedule stakeholder interviews with HR partners, operations managers, and senior leaders. Deploy skill gap survey across all role families. Complete full LMS audit and compliance inventory. Deliver findings readout to leadership by Day 14.</p>
+        <div class="deliverable-list">
+          <div class="deliverable">Stakeholder interviews complete</div>
+          <div class="deliverable">Skill gap survey deployed</div>
+          <div class="deliverable">LMS audit report</div>
+          <div class="deliverable">Paxon impact map</div>
+          <div class="deliverable">Leadership readout deck</div>
+        </div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-dot d2">2</div>
+      <div class="roadmap-content">
+        <div class="roadmap-week">Weeks 3 – 5 &nbsp;·&nbsp; Days 15–35</div>
+        <h3>Build: Design and develop core learning content</h3>
+        <p>Develop Paxon microlearning series in Articulate 360. Build role-based 7/30/60-day onboarding tracks. Create seasonal workforce rapid-onboard kit. Produce manager communication toolkit and VILT materials. Deploy first content to LMS.</p>
+        <div class="deliverable-list">
+          <div class="deliverable">Paxon microlearning series (5 modules)</div>
+          <div class="deliverable">Onboarding tracks (3 role types)</div>
+          <div class="deliverable">Seasonal onboard kit</div>
+          <div class="deliverable">Manager toolkit</div>
+          <div class="deliverable">Content live in LMS</div>
+        </div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-dot d3">3</div>
+      <div class="roadmap-content">
+        <div class="roadmap-week">Weeks 6 – 10 &nbsp;·&nbsp; Days 36–70</div>
+        <h3>Deploy: Launch leadership programs and performance cycle</h3>
+        <p>Facilitate 3 frontline manager VILT cohorts. Launch performance management cycle with goal-setting and quarterly check-in templates. Activate reskilling pathways for impacted roles. Deploy AI literacy eLearning module to all employees.</p>
+        <div class="deliverable-list">
+          <div class="deliverable">3 manager VILT cohorts</div>
+          <div class="deliverable">Performance cycle live</div>
+          <div class="deliverable">Reskilling paths active</div>
+          <div class="deliverable">AI literacy module deployed</div>
+          <div class="deliverable">Q1 check-in cycle kicked off</div>
+        </div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-dot d4">4</div>
+      <div class="roadmap-content">
+        <div class="roadmap-week">Weeks 11 – 13 &nbsp;·&nbsp; Days 71–90</div>
+        <h3>Evaluate: Measure impact and build for what's next</h3>
+        <p>Run Kirkpatrick Level 1–3 evaluations. Finalize LMS reporting dashboards. Compile 90-day leadership readout with business impact data. Present to HR and executive stakeholders. Deliver updated Q4 seasonal onboarding kit ready for peak season.</p>
+        <div class="deliverable-list">
+          <div class="deliverable">Kirkpatrick L1–L3 evaluation</div>
+          <div class="deliverable">LMS dashboard finalized</div>
+          <div class="deliverable">90-day impact presentation</div>
+          <div class="deliverable">Q4 seasonal kit ready</div>
+          <div class="deliverable">Continuous improvement plan</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS ALIGNMENT -->
+<section class="section" id="alignment">
+  <div class="reveal">
+    <p class="section-label">Why Naya</p>
+    <h2 class="section-title">JD Requirements <em>vs. Proven Experience</em></h2>
+    <p class="section-desc">Every responsibility in Radial's job description maps directly to documented experience — not claims, but demonstrated outcomes.</p>
+  </div>
+  <div class="alignment-grid reveal">
+    <div class="alignment-col">
+      <h3>Radial JD requirements</h3>
+      <div class="alignment-row">
+        <div class="check-icon">✓</div>
+        <div class="alignment-text">
+          <strong>Design & implement L&D strategies aligned to business goals</strong>
+          <span>Evolve: Led end-to-end program strategy reducing time-to-productivity by 15%</span>
+        </div>
+      </div>
+      <div class="alignment-row">
+        <div class="check-icon">✓</div>
+        <div class="alignment-text">
+          <strong>Lead needs assessments to identify skill gaps</strong>
+          <span>Every role — Evolve, Kohl's, and Houston Medical internship</span>
+        </div>
+      </div>
+      <div class="alignment-row">
+        <div class="check-icon">✓</div>
+        <div class="alignment-text">
+          <strong>LMS administration, optimization & accurate reporting</strong>
+          <span>Workday, Rippling — managed course builds, dashboards, and completion tracking</span>
+        </div>
+      </div>
+      <div class="alignment-row">
+        <div class="check-icon">✓</div>
+        <div class="alignment-text">
+          <strong>Manage end-to-end training program lifecycle</strong>
+          <span>Evolve: Full lifecycle including vendor management and evaluation</span>
+        </div>
+      </div>
+      <div class="alignment-row">
+        <div class="check-icon">✓</div>
+        <div class="alignment-text">
+          <strong>Analyze learning data and metrics</strong>
+          <span>Houston Medical: Built LMS dashboards reducing training delinquency in real time</span>
+        </div>
+      </div>
+      <div class="alignment-row">
+        <div class="check-icon">✓</div>
+        <div class="alignment-text">
+          <strong>Lead performance management process</strong>
+          <span>Evolve: Goal setting, quarterly check-ins, and annual reviews</span>
+        </div>
+      </div>
+    </div>
+    <div class="alignment-col">
+      <h3>Additional differentiators</h3>
+      <div class="alignment-row">
+        <div class="check-icon">✓</div>
+        <div class="alignment-text">
+          <strong>CDLP — Certified Digital Learning Professional</strong>
+          <span>Digital Learning Institute certification — directly relevant to digital-first program design</span>
+        </div>
+      </div>
+      <div class="alignment-row">
+        <div class="check-icon">✓</div>
+        <div class="alignment-text">
+          <strong>Compliance-driven environment experience</strong>
+          <span>Kohl's DC + Houston Medical — both high-compliance, audit-ready training environments</span>
+        </div>
+      </div>
+      <div class="alignment-row">
+        <div class="check-icon">✓</div>
+        <div class="alignment-text">
+          <strong>Blended learning across all modalities</strong>
+          <span>VILT, eLearning, microlearning, ILT, job aids — all documented across resume</span>
+        </div>
+      </div>
+      <div class="alignment-row">
+        <div class="check-icon">✓</div>
+        <div class="alignment-text">
+          <strong>Team leadership + vendor management</strong>
+          <span>Evolve: Directed team of 3 designers + LMS administrator + external vendors</span>
+        </div>
+      </div>
+      <div class="alignment-row">
+        <div class="check-icon">✓</div>
+        <div class="alignment-text">
+          <strong>High-volume workforce training</strong>
+          <span>Sonic Drive-In: Multi-location onboarding for front and back-of-house staff at scale</span>
+        </div>
+      </div>
+      <div class="alignment-row">
+        <div class="check-icon">✓</div>
+        <div class="alignment-text">
+          <strong>Available for up to 10% travel</strong>
+          <span>Confirmed in resume — ready to support Radial's fulfillment center network as needed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESENTER -->
+<section class="presenter-section" id="presenter">
+  <div class="presenter-inner reveal">
+    <div class="presenter-avatar-lg">NR</div>
+    <div class="presenter-text">
+      <h2>Naya Roquemore</h2>
+      <p class="role">Learning & Development Manager Candidate &nbsp;·&nbsp; Certified Digital Learning Professional (CDLP)</p>
+      <p>
+        Learning & Development professional with 5+ years of progressive experience designing, delivering, and continuously improving enterprise-wide learning programs across fast-paced, multi-site environments. Skilled at conducting needs assessments, closing skill gaps, and building scalable blended solutions tied directly to business goals — with hands-on experience administering enterprise LMS platforms and using data to drive program decisions.
+      </p>
+      <div class="creds-grid">
+        <div class="cred">
+          <div class="cred-label">Certification</div>
+          <div class="cred-val">CDLP — Digital Learning Institute</div>
+        </div>
+        <div class="cred">
+          <div class="cred-label">Years Experience</div>
+          <div class="cred-val">5+ years L&D</div>
+        </div>
+        <div class="cred">
+          <div class="cred-label">LMS Platforms</div>
+          <div class="cred-val">Workday, Rippling</div>
+        </div>
+        <div class="cred">
+          <div class="cred-label">Authoring Tools</div>
+          <div class="cred-val">Articulate 360, Adobe Captivate</div>
+        </div>
+        <div class="cred">
+          <div class="cred-label">Methodology</div>
+          <div class="cred-val">ADDIE, Kirkpatrick, Blended</div>
+        </div>
+        <div class="cred">
+          <div class="cred-label">Education</div>
+          <div class="cred-val">B.S. Business Admin — WGU</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to build this at Radial.</h2>
+  <p>This program is ready to launch on Day 1. Let's connect and talk about what the next 90 days could look like.</p>
+  <div class="cta-buttons">
+    <a href="mailto:nayaroquemore@gmail.com" class="btn btn-white">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M1 4.5l7 5 7-5" stroke="currentColor" stroke-width="1.5"/></svg>
+      nayaroquemore@gmail.com
+    </a>
+    <a href="tel:4783026658" class="btn btn-outline">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2h2.5l1 3-1.5 1.5a9 9 0 0 0 4.5 4.5L11 9.5l3 1V13a1 1 0 0 1-1 1C5.5 14 2 8.5 2 3a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      478-302-6658
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="14" fill="#0057A8" opacity=".2"/>
+      <path d="M10 8h8a4 4 0 0 1 4 4v0a4 4 0 0 1-4 4h-4l6 8H16l-6-8v8h-4V8h4z" fill="rgba(255,255,255,0.6)"/>
+    </svg>
+    <span>Radial → Paxon Workforce Readiness Program</span>
+  </div>
+  <p>Presented by Naya Roquemore &nbsp;·&nbsp; L&D Manager Candidate &nbsp;·&nbsp; 2026</p>
+  <p style="color:rgba(255,255,255,0.2);font-size:11px;">Program concept designed for interview presentation purposes</p>
+</footer>
+
+<script>
+function showPhase(n, el) {
+  document.querySelectorAll('.phase-pill').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.phase-detail').forEach(d => d.classList.remove('visible'));
+  el.classList.add('active');
+  document.getElementById('phase' + n).classList.add('visible');
+  const fills = [0, 25, 50, 75, 100];
+  document.getElementById('tlbar').style.width = fills[n] + '%';
+}
+
+showPhase(1, document.getElementById('pill1'));
+
+window.addEventListener('scroll', () => {
+  const s = document.documentElement;
+  const prog = (s.scrollTop || document.body.scrollTop) / ((s.scrollHeight || document.body.scrollHeight) - s.clientHeight) * 100;
+  document.getElementById('progress').style.width = Math.round(prog) + '%';
+});
+
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+reveals.forEach(r => obs.observe(r));
+
+const links = document.querySelectorAll('.nav-links a');
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.getAttribute('id'); });
+  links.forEach(l => {
+    l.classList.remove('active');
+    if (l.getAttribute('href') === '#' + cur) l.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
